@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import StopWatch from "./StopWatch";
 import StopWatchButton from "./StopWatchButton";
-import "./app.css"; // Make sure to create and import App.css
+import "./app.css";
 
 function App() {
   const [totalTime, setTotalTime] = useState<number>(0);
