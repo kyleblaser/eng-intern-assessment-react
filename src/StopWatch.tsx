@@ -3,11 +3,11 @@
 import React from "react";
 import "./stopwatch.css";
 
-interface StopWatchProps {
+interface StopWatch {
   time: number;
 }
 
-const StopWatch: React.FC<StopWatchProps> = ({ time }) => {
+const StopWatch: React.FC<StopWatch> = ({ time }) => {
   const formatTime = (time: number): string => {
     const minutes = Math.floor(time / 60000);
     const seconds = Math.floor((time % 60000) / 1000);
