@@ -9,7 +9,7 @@ function App() {
   const [totalTime, setTotalTime] = useState<number>(0);
   const [lapStartTime, setLapStartTime] = useState<number>(0);
   const [isRunning, setIsRunning] = useState<boolean>(false);
-  const [laps, setLaps] = useState<number[]>([]);
+  const [laps, setLaps] = useState<number[]>([]); // Array for laps
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function App() {
 
   const startStopwatch = () => {
     if (isRunning && intervalRef.current) {
-      clearInterval(intervalRef.current);
+      clearInterval(intervalRef.current); // Stop the stopwatch if it is already running
     } else {
       const startTime = Date.now() - totalTime;
       intervalRef.current = setInterval(() => {
@@ -48,7 +48,7 @@ function App() {
     setLapStartTime(totalTime);
   };
 
-  const lapTimeForDisplay = totalTime - lapStartTime;
+  const lapTimeForDisplay = totalTime - lapStartTime; // Calculate the lap time for display
 
   return (
     <div className="app-container">
